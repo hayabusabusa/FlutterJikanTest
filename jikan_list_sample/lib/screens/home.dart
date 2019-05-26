@@ -23,7 +23,6 @@ class HomeState extends State<Home> {
         setState(() {
           _animes = Animes.fromJson(res);
         });
-        _animes.tvTypeList().forEach((it) { print(it.title); });
       });
     });
   }
