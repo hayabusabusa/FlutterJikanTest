@@ -46,6 +46,7 @@ class HomeState extends State<Home> {
         ),
       )
       : ListView.builder(
+        padding: const EdgeInsets.all(8.0),
         itemCount: _animes.items.length ,
         itemBuilder: (BuildContext context, int index) {
           var item = _animes.items[index];

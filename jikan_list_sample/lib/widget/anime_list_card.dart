@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jikan_list_sample/model/anime.dart';
+import 'package:jikan_list_sample/widget/anime_list_genre_tag.dart';
 
 class AnimeListCard extends StatelessWidget {
   final Anime anime;
@@ -12,13 +13,13 @@ class AnimeListCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: SizedBox(
-        height: 260,
+        height: 230,
         child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: <Widget>[
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -29,15 +30,16 @@ class AnimeListCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text(anime.title),
+                      Text(anime.title, style: TextStyle(fontWeight: FontWeight.bold)),
                       Text(anime.type),
-                      Text(anime.allGenreString(), style: TextStyle(fontSize: 11.0))
+                      AnimeListGenreTag(anime.genres),
+                      //Text(anime.allGenreString(), style: TextStyle(fontSize: 11.0))
                     ],
                   ),
                 ),
