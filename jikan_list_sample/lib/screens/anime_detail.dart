@@ -10,6 +10,21 @@ class AnimeDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            expandedHeight: 250.0,
+            flexibleSpace: FlexibleSpaceBar(
+              //title: Text(anime.title),
+              background: Image.network(
+                anime.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

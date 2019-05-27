@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jikan_list_sample/model/anime.dart';
+import 'package:jikan_list_sample/screens/anime_detail.dart';
 import 'package:jikan_list_sample/widget/anime_list_genre_tag.dart';
 
 class AnimeListCard extends StatelessWidget {
@@ -12,6 +13,12 @@ class AnimeListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        var router = new MaterialPageRoute(builder: (BuildContext context) {
+          return AnimeDetail(anime);
+        });
+        Navigator.of(context).push(router);
+      },
       child: SizedBox(
         height: 230,
         child: Card(
@@ -32,7 +39,7 @@ class AnimeListCard extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[

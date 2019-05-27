@@ -37,7 +37,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Jikan list sample"),
+        title: Text("Jikan list"),
       ),
       body: _animes == null
       ? Center(
@@ -45,13 +45,15 @@ class HomeState extends State<Home> {
           valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey),
         ),
       )
-      : ListView.builder(
-        padding: const EdgeInsets.all(8.0),
-        itemCount: _animes.items.length ,
-        itemBuilder: (BuildContext context, int index) {
-          var item = _animes.items[index];
-          return AnimeListCard(item);
-        },
+      : Scrollbar(
+        child: ListView.builder(
+          padding: const EdgeInsets.all(8.0),
+          itemCount: _animes.items.length ,
+          itemBuilder: (BuildContext context, int index) {
+            var item = _animes.items[index];
+            return AnimeListCard(item);
+          },
+        ),
       ),
     );
   }
