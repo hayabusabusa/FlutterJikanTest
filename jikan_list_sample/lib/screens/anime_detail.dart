@@ -15,8 +15,8 @@ class AnimeDetail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(title),
-            Divider(color: Colors.grey[350],),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+            Divider(color: Colors.grey[400],),
             Text(content),
           ],
         ),
@@ -30,6 +30,8 @@ class AnimeDetail extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            pinned: true,
+            floating: false,
             expandedHeight: 250.0,
             flexibleSpace: FlexibleSpaceBar(
               //title: Text(anime.title),
@@ -46,7 +48,10 @@ class AnimeDetail extends StatelessWidget {
                   SizedBox(height: 16.0),
                   _buildContentWidget("Anime title", anime.title),
                   _buildContentWidget("Anime description", "This widget shows anime description."),
-                  _buildContentWidget("Anime tag", "Tag is here ?")
+                  _buildContentWidget("Anime tag", "Tag is here ?"),
+                  _buildContentWidget("Anime title", anime.title),
+                  _buildContentWidget("Anime description", "This widget shows anime description."),
+                  _buildContentWidget("Anime tag", "Tag is here ?"),
                 ],
               ),
             ]),
