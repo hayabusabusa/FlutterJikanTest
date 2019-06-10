@@ -15,8 +15,21 @@ class HomeGridItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Expanded(child: Image.network(_anime.imageUrl)),
-          Text(_anime.title),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(_anime.imageUrl)
+                )
+              ),
+            ),
+          ),
+          Text(
+            _anime.title,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+          ),
         ],
       ),
     );
