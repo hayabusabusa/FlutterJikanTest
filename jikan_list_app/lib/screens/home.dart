@@ -41,7 +41,7 @@ class HomeState extends State<Home> {
         ),
       )
       : GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: List.generate(_animes.anime.length, (index) {
             return HomeGridItem(_animes.anime[index]);
           }),
