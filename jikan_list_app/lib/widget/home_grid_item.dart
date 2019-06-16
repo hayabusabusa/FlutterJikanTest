@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jikan_list_app/models/animes.dart';
+import 'package:jikan_list_app/screens/anime_detail.dart';
 
 class HomeGridItem extends StatelessWidget {
   Anime _anime;
@@ -11,7 +12,15 @@ class HomeGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return AnimeDetail(_anime);
+            }
+          )
+        );
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
