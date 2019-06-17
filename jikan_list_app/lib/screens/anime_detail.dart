@@ -10,7 +10,7 @@ class AnimeDetail extends StatelessWidget {
 
   Widget _buildHeader() {
     return Container(
-      height: 250,
+      height: 300,
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
@@ -23,21 +23,20 @@ class AnimeDetail extends StatelessWidget {
   Widget _buildContents() {
     return Container(
       padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           // Title
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('Title'),
-              Container(
-                height: 4.0,
-                color: Colors.orange,
-              ),
-              Text(_anime.title, textAlign: TextAlign.start,)
-            ],
-          ),
+          Text('Title'),
+          Divider(color: Colors.grey,),
+          Text(_anime.title, textAlign: TextAlign.start,),
+
+          SizedBox(height: 16.0), // Spacer
+
+          // Content
+          Text('URL'),
+          Divider(color: Colors.grey,),
+          Text(_anime.url, textAlign: TextAlign.start,),
         ],
       ),
     );
@@ -50,11 +49,14 @@ class AnimeDetail extends StatelessWidget {
         title: Text(_anime.title),
       ),
       body: SingleChildScrollView(
-        child: Row(
-          children: <Widget>[
-            _buildHeader(),
-            _buildContents(),
-          ],
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: <Widget>[
+              _buildHeader(),
+              _buildContents(),
+            ],
+          ),
         ),
       ),
     );
