@@ -17,12 +17,18 @@ class Anime {
   String url;
   String title;
   String imageUrl;
+  String synopsis;
+  String source;
+  double score;
 
   Anime({
     this.id,
     this.url,
     this.title,
-    this.imageUrl
+    this.imageUrl,
+    this.synopsis,
+    this.source,
+    this.score
   });
 
   factory Anime.fromJson(Map<String, dynamic> json) {
@@ -30,7 +36,10 @@ class Anime {
       id: json['mal_id'],
       url: json['url'],
       title: json['title'],
-      imageUrl: json['image_url']
+      imageUrl: json['image_url'],
+      synopsis: json['synopsis'],
+      source: json['source'],
+      score: json['score']
     );
   }
 }

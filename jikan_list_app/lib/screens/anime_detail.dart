@@ -33,10 +33,31 @@ class AnimeDetail extends StatelessWidget {
 
           SizedBox(height: 16.0), // Spacer
 
-          // Content
+          // URL
           Text('URL'),
           Divider(color: Colors.grey,),
           Text(_anime.url, textAlign: TextAlign.start,),
+
+          SizedBox(height: 16.0), // Spacer
+
+          // Synopsis
+          Text('Synopsis'),
+          Divider(color: Colors.grey,),
+          Text(_anime.synopsis, textAlign: TextAlign.start,),
+
+          SizedBox(height: 16.0), // Spacer
+
+          // Source
+          Text('Source'),
+          Divider(color: Colors.grey,),
+          Text(_anime.source, textAlign: TextAlign.start,),
+
+          SizedBox(height: 16.0), // Spacer
+
+          // Score
+          Text('Score'),
+          Divider(color: Colors.grey,),
+          Text(_anime.score == null ? 'Not rate' : '${_anime.score}', textAlign: TextAlign.start,),
         ],
       ),
     );

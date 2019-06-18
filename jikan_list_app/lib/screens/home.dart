@@ -40,12 +40,14 @@ class HomeState extends State<Home> {
           valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey),
         ),
       )
-      : GridView.count(
+      : Scrollbar(
+        child: GridView.count(
           crossAxisCount: 2,
           children: List.generate(_animes.anime.length, (index) {
             return HomeGridItem(_animes.anime[index]);
           }),
         ),
+      )
     );
   }
 }

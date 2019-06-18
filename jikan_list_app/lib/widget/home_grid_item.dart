@@ -38,6 +38,7 @@ class HomeGridItem extends StatelessWidget {
             _anime.title,
             textAlign: TextAlign.center,
             maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
